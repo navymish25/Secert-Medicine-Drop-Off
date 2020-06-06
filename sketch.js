@@ -14,7 +14,12 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	
+	//boxBSprite=createSprite(width/2,650,200,20);
+	//boxBSprite.shapeColor="red";
+	//boxLSprite=createSprite(300,610,20,100);
+	//boxLSprite.shapeColor="red";
+	//boxRSprite=createSprite(500,610,20,100);
+	//boxRSprite.shapeColor="red";
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -31,7 +36,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.3, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -50,6 +55,7 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
+  
   drawSprites();
  
 }
